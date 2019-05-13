@@ -34,3 +34,57 @@ function solution(N) {
 }
 
 
+function solution2(N){
+	let currGap = 0
+	let maxGap = 0
+	//skip tailing zero
+	while (N > 0 && N%2 === 0) {
+		N /= 2
+	}
+
+	while(N > 0){		
+		let remainder = N % 2
+		
+		// start counting inside the gap
+		if(remainder === 0){
+			currGap += 1
+		}
+		//end of the gap
+		else {
+			if(currGap !== 0){
+				if(currGap > maxGap){
+					maxGap = currGap
+					currGap = 0
+				}
+			}
+		}
+		N = Math.floor(N/2)
+	}
+	return maxGap
+}
+
+
+console.log(solution2(9)); // 1001 => gap = 2
+console.log(solution2(15)); // 1111 => gap = 0
+console.log(solution2(20)); // 10100 => gap = 1
+console.log(solution2(32)); // 100000=> gap = 0
+console.log(solution2(529)); // 1000010001 => gap = 4
+
+function solution3(N) {
+	const NtoBinArr = N.toString(2).split('1')
+	//skip tailing zero
+	NtoBinArr.pop()
+	const filtered = NtoBinArr.filter((item)=> item !== '')
+	if(filtered.length === 0) return 0
+	return filtered.reduce((acc, curr) => acc > curr.length ? acc : curr.length,0)
+}
+
+console.log(solution3(9)); // 1001 => gap = 2
+console.log(solution3(15)); // 1111 => gap = 0
+console.log(solution3(20)); // 10100 => gap = 1
+console.log(solution3(32)); // 100000=> gap = 0
+console.log(solution3(529)); // 1000010001 => gap = 4
+
+
+
+
