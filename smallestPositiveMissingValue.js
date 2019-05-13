@@ -6,7 +6,7 @@
 [5, 10, 15]  	expect 1 
 */
 
-function spmv(arr) {
+function solution(arr) {
 	let min = 1
 	arr.sort((a, b)=> a > b)
 
@@ -27,11 +27,10 @@ function spmv(arr) {
 		
 		min = curr + 1
 	}
-	console.log('min', min);
 }
 
-spmv([1,2,3,4])
-spmv([1,3,4])
-spmv([0,2,3] )
-spmv([-1,-2,3])
-spmv([5, 10, 15])
+solution([1,2,3,4])
+solution([1,3,4])
+solution([0,2,3] )
+solution([-1,-2,3])
+solution([5, 10, 15])
