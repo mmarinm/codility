@@ -29,6 +29,9 @@ function solution(A) {
             zeroCount += 1
         } else if(el ===1 ){
             pairs += zeroCount
+            if(pairs > 1000000000){
+                return -1
+            }
         }
     }
     return pairs
