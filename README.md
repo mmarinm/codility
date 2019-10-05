@@ -1,1 +1,1 @@
-# Javascript solutions for Codility #
+# Javascript Solutions For Codility #
