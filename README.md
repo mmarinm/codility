@@ -1,0 +1,1 @@
+# Javascript Solutions For Codility #
